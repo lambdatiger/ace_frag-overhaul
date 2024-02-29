@@ -13,6 +13,7 @@ PREP(doFragRandom);
 PREP(doFragTargeted);
 PREP(doReflections);
 PREP(doSpall);
+PREP(doSpallPenetration);
 PREP(findReflections);
 PREP(getMaterialInfo);
 PREP(getSpallInfo);
