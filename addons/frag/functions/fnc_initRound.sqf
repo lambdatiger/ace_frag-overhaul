@@ -31,6 +31,7 @@ if (GVAR(enabled) && {_ammo call FUNC(shouldFrag)}) then {
         "Explode",
         {
             params ["_projectile", "_posASL", "_velocity"];
+            // shot parent should be the EH parameter in v2.18
             private _shotParents = _projectile getVariable [QGVAR(shotParent), getShotParents _projectile];
             private _ammo = typeOf _projectile;
             // wait for frag damage to kill units before spawning fragments
@@ -50,6 +51,7 @@ if (GVAR(spallEnabled) && {_ammo call FUNC(shouldSpall)}) then {
         "HitPart",
         {
             params ["_projectile", "_hitObject", "", "_posASL", "_velocity", "_surfNorm", "", "", "_surfType"];
+            // shot parent should be the EH parameter in v2.18
             private _shotParent = getShotParents _projectile;
             private _ammo = typeOf _projectile;
             private _vectorUp = vectorUp _projectile;
@@ -63,10 +65,12 @@ if (GVAR(spallEnabled) && {_ammo call FUNC(shouldSpall)}) then {
             ] call CBA_fnc_execNextFrame;
         }
     ];
+    _projectile addEventHandler ["Penetrated", {_this call LINKFUNC(doSpallPenetration)}];
 };
 #ifdef DEBUG_MODE_DRAW
 if (GVAR(debugOptions) && {_ammo call FUNC(shouldFrag) || {_ammo call FUNC(shouldSpall)}}) then {
     [_projectile, "red", true] call FUNC(dev_trackObj);
+            private _ammo = typeOf _projectile;
 };
 #endif
 TRACE_1("initExit",_ammo);
