@@ -19,10 +19,10 @@
 #define GLUE(g1,g2) g1##g2
 #define EPSILON 0.1
 
+TRACE_1("doSpallPenetration",_this);
 if (CBA_missionTime < ace_frag_nextSpallAllowTime) exitWith {
     TRACE_1("timeExit",_this);
 };
-TRACE_1("doSpallPenetration",_this);
 params ["_projectile", "_hitObject", "_surfaceType", "", "_spallPosASL", "_newVelocityVector"];
 
 private _ammo = typeOf _projectile;
