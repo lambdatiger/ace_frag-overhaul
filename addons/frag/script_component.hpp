@@ -3,9 +3,9 @@
 #include "\z\ace\addons\main\script_mod.hpp"
 
 // #define LOG_FRAG_INFO
-#define DEBUG_MODE_FULL
-#define DEBUG_MODE_DRAW
-#define DISABLE_COMPILE_CACHE
+// #define DEBUG_MODE_FULL
+// #define DEBUG_MODE_DRAW
+// #define DISABLE_COMPILE_CACHE
 // #define ENABLE_PERFORMANCE_COUNTERS
 
 #ifdef DEBUG_ENABLED_FRAG
@@ -29,7 +29,7 @@
 #define ACE_FRAG_IMPERIC_VELOCITY_CONSTANT 0.8
 
 // Spall values
-#define ACE_FRAG_SPALL_HOLDOFF -0.1
+#define ACE_FRAG_SPALL_HOLDOFF 0.2
 #define ACE_FRAG_SPALL_VELOCITY_INHERIT_COEFF 0.8
 // sqrt(2)/50
 #define ACE_FRAG_SPALL_CALIBER_COEF 0.0282847
