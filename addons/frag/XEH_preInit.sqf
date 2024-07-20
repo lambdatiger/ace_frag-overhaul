@@ -7,7 +7,6 @@ PREP_RECOMPILE_START;
 PREP_RECOMPILE_END;
 
 call FUNC(initMaterialCache);
-
 GVAR(spallInfoCache) = createHashMap;
 GVAR(shouldSpallCache) = createHashMap;
 GVAR(nextSpallAllowTime) = -1;

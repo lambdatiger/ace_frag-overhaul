@@ -7,7 +7,6 @@ private _category = format ["ACE %1", localize LSTRING(Module_DisplayName)];
     true,
     1
 ] call CBA_fnc_addSetting;
-
 [
     QGVAR(spallEnabled), "CHECKBOX",
     [LSTRING(EnableSpall), LSTRING(EnableSpall_Desc)],
@@ -21,4 +20,15 @@ private _category = format ["ACE %1", localize LSTRING(Module_DisplayName)];
     _category,
     false,
     1
+] call CBA_fnc_addSetting;
+[
+    QGVAR(spallIntensity),
+    "SLIDER",
+    [LSTRING(SpallIntensity), LSTRING(SpallIntensity_Desc)],
+    [_category, LSTRING(Spall)],
+    [0.1, 2, 1, 1],
+    1,
+    {
+        GVAR(shouldSpallCache) = createHashMap;
+    }
 ] call CBA_fnc_addSetting;
